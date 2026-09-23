@@ -4,7 +4,7 @@ on:
     tags: "*"
 
 env:
-  IMAGE_NAME: ghcr.io/myjettools/settings-remote-access
+  IMAGE_NAME: ghcr.io/my-jet-tools/settings-remote-access
 
 jobs:
   build:
