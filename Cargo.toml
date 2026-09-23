@@ -1,0 +1,26 @@
+[package]
+name = "settings-remote-access"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+my-http-server = { tag = "0.9.0", git = "https://github.com/MyJetTools/my-http-server.git" }
+
+rust-extensions = { tag = "0.1.5", git = "https://github.com/MyJetTools/rust-extensions.git" }
+
+my-logger = { tag = "1.3.0", git = "https://github.com/MyJetTools/my-logger.git" }
+
+# with-ring-tls: settings-service is reached over https via
+# `https://domain@ip:port` — the domain is used for SNI / certificate check,
+# the ip only to open the socket.
+flurl = { tag = "0.7.0", git = "https://github.com/MyJetTools/fl-url.git", features = [
+    "with-ring-tls",
+] }
+my-settings-reader = { tag = "0.5.0", git = "https://github.com/MyJetTools/my-settings-reader.git" }
+
+tokio = { version = "*", features = ["full"] }
+
+async-trait = "*"
+serde = { version = "*", features = ["derive"] }
